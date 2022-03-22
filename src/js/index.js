@@ -2,7 +2,7 @@
 import { getLocations, getWeather } from './actions';
 import debounce from './debounce';
 
-const API_KEY = '1771e80ec84d432889d51008221603';
+const API_KEY = '<your weather API key>';
 const search = document.querySelector('#search');
 const locationsList = document.querySelector('#locations');
 const getLocs = debounce(getLocations);
