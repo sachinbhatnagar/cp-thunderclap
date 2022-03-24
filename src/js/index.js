@@ -12,8 +12,8 @@ search.addEventListener('input', (evt) => {
 
   if (evt.inputType === 'insertText') {
     getLocs(API_KEY, evt.target.value, (res) => {
-      let remappedLocations = res.map(({ name, region }) => `<option value="${name}, ${region}">`).join('');
-      locationsList.innerHTML = remappedLocations;
+      let remapLocs = res.map(({ name, region }) => `<option value="${name}, ${region}">`);
+      locationsList.innerHTML = remapLocs.join('');
     });
   } else if (evt.target.value !== '' && evt.inputType !== 'deleteContentBackward') {
     getWeather(API_KEY, evt.target.value).then((res) => console.log(res));
