@@ -1,11 +1,17 @@
 // Write your code here...
 import { getLocations, getWeather } from './actions';
 import debounce from './debounce';
+import State from './state';
+import { currentWeather, forecastWeather } from './view';
 
 const API_KEY = '1771e80ec84d432889d51008221603';
 const search = document.querySelector('#search');
 const locationsList = document.querySelector('#locations');
-const getLocs = debounce(getLocations, 800);
+const getLocs = debounce(getLocations);
+let { state, registerViewHandler } = new State();
+
+registerViewHandler(currentWeather);
+registerViewHandler(forecastWeather);
 
 search.addEventListener('input', (evt) => {
   evt.preventDefault();
@@ -16,6 +22,6 @@ search.addEventListener('input', (evt) => {
       locationsList.innerHTML = remappedLocations;
     });
   } else if (evt.target.value !== '' && evt.inputType !== 'deleteContentBackward') {
-    getWeather(API_KEY, evt.target.value).then((res) => console.log(res));
+    getWeather(API_KEY, evt.target.value).then((result) => (state.weather = result));
   }
 });

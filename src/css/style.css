@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -48,8 +48,19 @@ input {
   grid-template-columns: 32% 2% 32% 2% 32%;
   grid-auto-columns: auto;
   align-items: center;
-  background-image: url(../img/snow.jpeg);
   background-size: cover;
+}
+
+.cold {
+  background-image: url(../img/snow.jpeg);
+}
+
+.warm {
+  background-image: url(../img/sunny.jpeg);
+}
+
+.hot {
+  background-image: url(../img/hot.jpeg);
 }
 
 #current > div {
@@ -63,7 +74,7 @@ input {
 }
 
 #temp {
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 #condition {
@@ -96,7 +107,7 @@ input {
   position: relative;
   top: 10px;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0px, 1fr));
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
   align-items: center;
 }
 
@@ -116,4 +127,17 @@ input {
 
 .date {
   font-weight: 600;
+}
+
+.hide {
+  visibility: hidden !important;
+}
+
+#onload-title {
+  position: relative;
+  top: 120px;
+  text-align: center;
+  font-size: 7rem;
+  font-weight: 800;
+  color: rgb(0, 0, 0, 0.4);
 }
