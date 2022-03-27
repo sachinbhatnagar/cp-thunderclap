@@ -5,5 +5,5 @@ export function getLocations(apiKey, key, cb) {
 }
 
 export function getWeather(apiKey, loc) {
-  return fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${loc}&days=5&aqi=no&alerts=no`).then((res) => res.json());
+  return fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${loc}&days=5&aqi=no&alerts=no`).then((res) => res.json());
 }
