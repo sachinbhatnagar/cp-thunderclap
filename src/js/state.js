@@ -13,9 +13,6 @@ export default class State {
       },
     });
   }
-  get state() {
-    return this.data;
-  }
   registerViewHandler(fn) {
     fnArr.push(fn);
   }
